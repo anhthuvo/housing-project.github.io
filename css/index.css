@@ -532,6 +532,7 @@ footer {
 
 .subscribe input {
   width: 40%;
+  min-width: 250px;
   height: 45px;
   padding-left: 10px;
   margin-bottom: 20px;
