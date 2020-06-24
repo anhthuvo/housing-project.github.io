@@ -923,7 +923,10 @@ footer span:nth-child(1) {
     padding: 0 10px 50px 10px;
   }
 
-  .get-more__img,
+  .get-more__img {
+    padding: 0px 20px 0
+  }
+  
   .get-more__content > p {
     padding: 50px 20px 0;
   }
