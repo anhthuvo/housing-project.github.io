@@ -828,6 +828,7 @@ footer span:nth-child(1) {
   .agents__title,
   .contact__title {
     font-size: 40px;
+    padding-bottom: 20px;
   }
 
   .about,
@@ -926,7 +927,7 @@ footer span:nth-child(1) {
   .get-more__img {
     padding: 0px 20px 0
   }
-  
+
   .get-more__content > p {
     padding: 50px 20px 0;
   }
