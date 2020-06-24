@@ -265,7 +265,7 @@ nav > a.active {
   display: flex;
   margin: 0 -15px;
   padding-bottom: 20px;
-  text-align: justify;
+  text-align: center;
 }
 
 .about__content__item > p {
@@ -362,7 +362,6 @@ footer {
 .blog__item__content {
   background-color: gainsboro;
   padding: 20px 20px;
-  text-align: left;
 }
 
 .blog__item__content > h2 {
@@ -409,7 +408,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
   width: 70px;
   height: 70px;
   background-color: rgb(0, 205, 206, 0.5);
@@ -558,7 +557,7 @@ footer {
 
 .agents__list {
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   margin: 0 -15px;
 }
 
@@ -733,7 +732,6 @@ footer span:nth-child(1) {
     padding: 0px 100px 0;
     margin-top: 50px;
   }
-  
 }
 
 @media (max-width: 991.98px) {
@@ -780,6 +778,7 @@ footer span:nth-child(1) {
 
 @media (max-width: 767.98px) {
   header {
+    position: relative;
     flex-direction: column;
     align-items: start;
   }
@@ -830,6 +829,18 @@ footer span:nth-child(1) {
     font-size: 40px;
   }
 
+  .about,
+  .stats,
+  .blog,
+  .portfolio,
+  .subscribe,
+  .agents,
+  .contact,
+  footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   .about__content {
     flex-wrap: wrap;
   }
@@ -853,21 +864,22 @@ footer span:nth-child(1) {
     margin-bottom: 1vw;
     font-size: 4vw;
   }
-  
+
   .portfolio__item__content p:nth-child(2) {
     font-size: 2vw;
   }
 
   .subscribe > p {
     width: 100%;
-    padding: 0 30px 20px ;
+    padding: 0 30px 20px;
   }
 
-  .contact__map > iframe{
+  .contact__map > iframe {
     height: 200px;
   }
 
-  .contact__form__info, .contact__form__message {
+  .contact__form__info,
+  .contact__form__message {
     width: 100%;
   }
 
@@ -877,7 +889,6 @@ footer span:nth-child(1) {
 }
 
 @media (max-width: 575.98px) {
-
   .header__brand > a {
     font-size: 30px;
   }
@@ -906,13 +917,13 @@ footer span:nth-child(1) {
   .stats__item > p {
     font-size: 30px;
   }
-  
+
   .blog__item {
     padding: 0 10px 50px 10px;
   }
 
   .get-more__img,
-  .get-more__content > p{
+  .get-more__content > p {
     padding: 50px 20px 0;
   }
 
@@ -926,11 +937,20 @@ footer span:nth-child(1) {
 
   .subscribe > p {
     width: 100%;
-    padding: 0 0px 20px ;
+    padding: 0 0px 20px;
   }
 
   .agents__list__item {
     width: 100%;
     margin-bottom: 50px;
+  }
+
+  .portfolio__slideShow__right-arrow,
+  .portfolio__slideShow__left-arrow {
+    width: 30px;
+  }
+
+  .portfolio__item__img {
+    width: 250px;
   }
 }

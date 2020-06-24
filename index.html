@@ -22,12 +22,12 @@
       </div>
       <div class="navbar">
         <nav>
-          <a href="#" class="active">Home</a>
-          <a href="#goToAbout">About</a>
-          <a href="#goToBlog">Blog</a>
-          <a href="#goToPortfolio">Portfolio</a>
-          <a href="#goToAgents">Agents</a>
-          <a href="#goToContact">Contact</a>
+          <a href="#" class="active nav-link">Home</a>
+          <a href="#goToAbout" class="nav-link">About</a>
+          <a href="#goToBlog" class="nav-link">Blog</a>
+          <a href="#goToPortfolio" class="nav-link">Portfolio</a>
+          <a href="#goToAgents" class="nav-link">Agents</a>
+          <a href="#goToContact" class="nav-link">Contact</a>
         </nav>
       </div>
     </header>
@@ -477,14 +477,23 @@
           $(".portfolio__slideShow__img").children("img").attr("src", new_src);
         });
 
-        $(window).bind("mousewheel", function (event) {
-          if (event.originalEvent.wheelDelta >= 0) {
+        var previous_position;
+        $(window).scroll(function(event) {
+
+          var current_position = $("html").scrollTop();
+
+          if ( current_position > $(".about").offset().top ){
+            $("header").css("position","fixed");
+          }
+          if ( current_position < $(".about").offset().top ) {
+            $("header").css("position","relative");
+          }
+
+          if (current_position < previous_position) {
             // console.log("Scroll up");
-          } else {
+          } 
+          else {
             // console.log("Scroll down");
-
-            var current_position = $("html").scrollTop();
-
             var position_start_animation =
               $(".stats").offset().top - $(window).height();
 
@@ -521,10 +530,20 @@
               });
               // end- count up animation
             }
-
           }
-          
+          previous_position = current_position;
+
         });
+
+        $("body").click(function(event){
+          if ( $(".navbar").css("display") == 'block'){
+            if ( event.target.className.indexOf("nav-link") == -1 &&
+                  event.target.className.indexOf("ham-btn") == -1 ){
+                    $(".navbar").slideToggle();
+            }
+          }
+        });
+
       });
     </script>
   </body>
