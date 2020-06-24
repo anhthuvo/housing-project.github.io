@@ -156,21 +156,25 @@
       <div class="stats__item">
         <span class="stats__item__counter" data-count="3">0</span>
         <span class="stats__item__counter" data-count="500">0</span>
+        <span class="stats__item__counter--mobile">3500</span>
         <p>clients</p>
       </div>
 
       <div class="stats__item">
         <span class="stats__item__counter" data-count="650">0</span>
+        <span class="stats__item__counter--mobile">650</span>
         <p>plans</p>
       </div>
 
       <div class="stats__item">
         <span class="stats__item__counter" data-count="1021">0</span>
+        <span class="stats__item__counter--mobile">1021</span>
         <p>plans</p>
       </div>
 
       <div class="stats__item" >
         <span class="stats__item__counter" data-count="1010">0</span>
+        <span class="stats__item__counter--mobile">1010</span>
         <p>likes</p>
       </div>
     </section>
@@ -480,6 +484,10 @@
         var previous_position;
         $(window).scroll(function(event) {
 
+          if ( $(".navbar").css("display") == 'block' ) {
+            $(".navbar").hide();
+          }
+
           var current_position = $("html").scrollTop();
 
           if ( current_position > $(".about").offset().top ){
@@ -534,7 +542,7 @@
           previous_position = current_position;
 
         });
-
+        // click outside navbar, navbar disappear
         $("body").click(function(event){
           if ( $(".navbar").css("display") == 'block'){
             if ( event.target.className.indexOf("nav-link") == -1 &&
